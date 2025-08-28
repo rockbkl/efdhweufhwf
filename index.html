@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevMods - Trusted mods & tested APKs</title>
-    <link rel="icon" type="image/png" href="https://files.catbox.moe/gy2l02.jpg">
+    <link rel="icon" type="image/png" href="https://files.catbox.moe/446l54.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
@@ -51,7 +51,7 @@
         <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold">
-                    <img src="https://files.catbox.moe/gy2l02.jpg" alt="DevMods Logo" class="w-8 h-8 rounded-lg">
+                    <img src="https://files.catbox.moe/446l54.jpg" alt="DevMods Logo" class="w-8 h-8 rounded-lg">
                 </div>
                 <div>
                     <h1 class="text-lg font-semibold">DevMods</h1>
@@ -101,13 +101,7 @@
                 </div>
 
                 
-                <div class="mt-6">
-                    <h4 class="font-medium text-sm">Sort</h4>
-                    <div class="mt-2 flex gap-2">
-                        <button id="sort-latest" class="px-2 py-1 rounded-md text-sm border hover:bg-slate-50 transition-colors">Latest</button>
-                        <button id="sort-az" class="px-2 py-1 rounded-md text-sm border hover:bg-slate-50 transition-colors">A-Z</button>
-                    </div>
-                </div>
+                
             </aside>
 
             <!-- Right: APK grid/list -->
@@ -322,8 +316,7 @@
         const resultsCount = document.getElementById('results-count');
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileNav = document.getElementById('mobile-nav');
-        const sortLatest = document.getElementById('sort-latest');
-        const sortAz = document.getElementById('sort-az');
+       
         const downloadModal = document.getElementById('download-modal');
         const modalBackdrop = document.getElementById('modal-backdrop');
         const closeModal = document.getElementById('close-modal');
@@ -714,18 +707,7 @@
                 mobileMenuButton.querySelector('i').className = mobileNav.classList.contains('hidden') ? 'fa fa-bars' : 'fa fa-xmark';
             });
             
-            // Sort buttons
-            sortLatest.addEventListener('click', () => {
-                data = [...data].sort((a, b) => new Date(b.updated) - new Date(a.updated));
-                currentPage = 1; // Reset to first page when sorting changes
-                renderApks();
-            });
-            
-            sortAz.addEventListener('click', () => {
-                data = [...data].sort((a, b) => a.title.localeCompare(b.title));
-                currentPage = 1; // Reset to first page when sorting changes
-                renderApks();
-            });
+           
             
             // Modal events
             modalBackdrop.addEventListener('click', closeDownloadModal);
